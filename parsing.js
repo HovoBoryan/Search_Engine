@@ -5,8 +5,8 @@ function parseFiles() {
   const file1 = fs.readFileSync('1.txt', 'utf8');
   const file2 = fs.readFileSync('2.txt', 'utf8');
 
-  const words1 = file1.split(/\s+/);
-  const words2 = file2.split(/\s+/);
+  const words1 = file1.replace(/[a-zA-z]/).split(/\s+/);
+  const words2 = file2.replace(/[a-zA-A]/).split(/\s+/);
 
   const uniqueWords = new Set([...words1, ...words2]);
   const dbLines = Array.from(uniqueWords).map(word => {
